@@ -6,7 +6,7 @@ const envFile = require('dotenv').config();
 
 
 const apiKey = process.env.API_KEY
-const apiUrl = process.env.API_URL //`https://api.anthropic.com/v1`
+const apiUrl = process.env.API_URL 
 i = 0
 async function callopenApi(params) {
     try {
@@ -32,7 +32,9 @@ async function callopenApi(params) {
           return msg
     
     } catch (error) {
-      console.log("🚀 ~ error:", error)
+      //console.log("🚀 ~ error:", error)
+      console.error("Error in fetchData:", error);
+      //res.status(500).json({ error: "Internal server error" });
 
     }
 }

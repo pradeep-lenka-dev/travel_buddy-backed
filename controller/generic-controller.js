@@ -19,9 +19,10 @@ class genericController {
             const finalres = []
             const regex = /\d+\.\s+([A-Za-z\s]+)/g;
             let count = 0
-            // if(result.content[0].text.length < 600 ){
-            //     res.status(400).json(result.content[0].text)
-            // }
+            if(result.content[0].text.length < 600 ){          
+
+               return res.status(400).json(result.content[0].text)
+            }
             for (const destination of destinations) {
                 const text = destination.text;
                 let match;
